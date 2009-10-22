@@ -1,0 +1,39 @@
+HKCR
+{
+	NoRemove CLSID
+	{
+		ForceRemove {8218849A-80B4-4231-AD8A-5167F27D2F6F} = s 'PicasaStarIcon Class'
+		{
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+		}
+	}
+}
+
+HKLM
+{
+  NoRemove SOFTWARE
+  {
+    NoRemove Microsoft
+    {
+      NoRemove Windows
+      {
+        NoRemove CurrentVersion
+        {
+          NoRemove Explorer
+          {
+            NoRemove ShellIconOverlayIdentifiers
+            {
+              ForceRemove PicasaStarIcon = s '{8218849A-80B4-4231-AD8A-5167F27D2F6F}'
+              {
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
