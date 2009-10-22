@@ -1,0 +1,36 @@
+// PicasaExt.idl : IDL source for PicasaExt
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (PicasaExt.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(6B43D611-DE5D-45E5-9545-269B774472B8),
+	dual,
+	nonextensible,
+	helpstring("IPicasaStarIcon Interface"),
+	pointer_default(unique)
+]
+interface IPicasaStarIcon : IDispatch{
+};
+[
+	uuid(F00061E8-2DA8-4AE6-B145-95685C61FDE6),
+	version(1.0),
+	helpstring("PicasaExt 1.0 Type Library")
+]
+library PicasaExtLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(8218849A-80B4-4231-AD8A-5167F27D2F6F),
+		helpstring("PicasaStarIcon Class")
+	]
+	coclass PicasaStarIcon
+	{
+		[default] interface IPicasaStarIcon;
+	};
+};
