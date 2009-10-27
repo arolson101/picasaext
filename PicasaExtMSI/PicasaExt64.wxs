@@ -10,12 +10,22 @@
         <Directory Id="TARGETDIR" Name="SourceDir">
             <Directory Id="ProgramFiles64Folder" Name="PFiles">
                 <Directory Id="INSTALLDIR" Name="PicasaExt">
-                    <Component Win64="yes" Id="ComponentPicasaExt" Guid="B71FD519-6E0C-417e-BF18-DD66CE5E75A7">
-                        <File Id="PICASAEXTDLL" Name="PicasaExt.dll" DiskId="1" Source="..\Release\PicasaExt\x64\PicasaExt.dll" KeyPath="yes" />
+                    <Component Win64="yes" Id="ComponentPicasaExt32" Guid="B71FD519-6E0C-417e-BF18-DD66CE5E75A7">
+                        <File Id="PicasaExtDLL32" Name="PicasaExt32.dll" DiskId="1" Source="..\Release\PicasaExt\Win32\PicasaExt.dll" KeyPath="yes" />
+                        <RegistryValue Root="HKCR" Key="Wow6432Node\AppID\[APPID]" Value="PicasaExt" Action="write" Type="string" />
+                        <RegistryValue Root="HKCR" Key="Wow6432Node\AppID\PicasaExt.DLL" Name="AppID" Value="[APPID]" Action="write" Type="string" />
+                        <RegistryValue Root="HKCR" Key="Wow6432Node\CLSID\[CLSID]" Value="PicasaStarIcon Class" Action="write" Type="string" />
+                        <RegistryValue Root="HKCR" Key="Wow6432Node\CLSID\[CLSID]\InprocServer32" Value="[INSTALLDIR]PicasaExt32.dll" Action="write" Type="string" />
+                        <RegistryValue Root="HKCR" Key="Wow6432Node\CLSID\[CLSID]\InprocServer32" Name="ThreadingModel" Value="Apartment" Action="write" Type="string" />
+                        <RegistryValue Root="HKCR" Key="Wow6432Node\CLSID\[CLSID]\Programmable" Value="" Action="write" Type="string" />
+                        <RegistryValue Root="HKLM" Key="SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Explorer\ShellIconOverlayIdentifiers\PicasaStarIcon" Value="[CLSID]" Action="write" Type="string" />
+                    </Component>
+                    <Component Win64="yes" Id="ComponentPicasaExt64" Guid="A1E1C5D3-B76F-4d88-A297-4B40760CFF50">
+                        <File Id="PicasaExtDLL64" Name="PicasaExt64.dll" DiskId="1" Source="..\Release\PicasaExt\x64\PicasaExt.dll" KeyPath="yes" />
                         <RegistryValue Root="HKCR" Key="AppID\[APPID]" Value="PicasaExt" Action="write" Type="string" />
                         <RegistryValue Root="HKCR" Key="AppID\PicasaExt.DLL" Name="AppID" Value="[APPID]" Action="write" Type="string" />
                         <RegistryValue Root="HKCR" Key="CLSID\[CLSID]" Value="PicasaStarIcon Class" Action="write" Type="string" />
-                        <RegistryValue Root="HKCR" Key="CLSID\[CLSID]\InprocServer32" Value="[INSTALLDIR]PicasaExt.dll" Action="write" Type="string" />
+                        <RegistryValue Root="HKCR" Key="CLSID\[CLSID]\InprocServer32" Value="[INSTALLDIR]PicasaExt64.dll" Action="write" Type="string" />
                         <RegistryValue Root="HKCR" Key="CLSID\[CLSID]\InprocServer32" Name="ThreadingModel" Value="Apartment" Action="write" Type="string" />
                         <RegistryValue Root="HKCR" Key="CLSID\[CLSID]\Programmable" Value="" Action="write" Type="string" />
                         <RegistryValue Root="HKLM" Key="SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\ShellIconOverlayIdentifiers\PicasaStarIcon" Value="[CLSID]" Action="write" Type="string" />
@@ -24,11 +34,13 @@
             </Directory>
         </Directory>
         <Feature Id="FeaturePicasaExt64bit" Level="1">
-            <ComponentRef Id="ComponentPicasaExt" />
+            <ComponentRef Id="ComponentPicasaExt32" />
+            <ComponentRef Id="ComponentPicasaExt64" />
         </Feature>
         <UI />
         <Property Id="WIXUI_INSTALLDIR" Value="INSTALLDIR" />
         <UIRef Id="WixUI_InstallDir" />
         <WixVariable Id="WixUIBannerBmp" Value="Bitmaps\bannrbmp.bmp" />
+        <WixVariable Id="WixUILicenseRtf" Value="lgpl.rtf" />
     </Product>
 </Wix>
