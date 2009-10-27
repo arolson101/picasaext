@@ -79,16 +79,26 @@ static bool IsStarred(LPCWSTR pwszIniPath, LPCWSTR pwszFileName, LPCWSTR pwszFil
 	CString line;
 	while( file.ReadString(line) )
 	{
-		if( line == iniKey )
+		int start = line.Find(iniKey);
+		if( start != -1 )
 		{
-			while( file.ReadString(line) && line[0] != '[' )
+			do
 			{
-				if( line == L"star=yes" )
+				int star = line.Find(L"star=yes");
+				int brace = line.Find(L"[");
+				if( star != -1 && (brace == -1 || star < brace) )
 				{
 					bStarred = true;
 					break;
 				}
+
+				if( brace != -1 && (start == -1 || brace > start + 1 ) )
+					break;
+
+				start = -1;
 			}
+			while( file.ReadString(line) );
+
 			break;
 		}
 	}
