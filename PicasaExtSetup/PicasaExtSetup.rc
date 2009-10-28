@@ -53,8 +53,8 @@ END
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 1,0,0,1
- PRODUCTVERSION 1,0,0,1
+ FILEVERSION 1,0,1,0
+ PRODUCTVERSION 1,0,1,0
  FILEFLAGSMASK 0x17L
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -70,12 +70,12 @@ BEGIN
         BLOCK "040904b0"
         BEGIN
             VALUE "FileDescription", "PicasaExt Installer"
-            VALUE "FileVersion", "1, 0, 0, 1"
+            VALUE "FileVersion", "1, 0, 1, 0"
             VALUE "InternalName", "PicasaExt Installer"
             VALUE "LegalCopyright", "Copyright (C) 2009"
             VALUE "OriginalFilename", "PicasaExtSetup.exe"
             VALUE "ProductName", "PicasaExt Installer"
-            VALUE "ProductVersion", "1, 0, 0, 1"
+            VALUE "ProductVersion", "1, 0, 1, 0"
         END
     END
     BLOCK "VarFileInfo"
@@ -90,8 +90,8 @@ END
 // FILE
 //
 
-IDR_MSI32               FILE                    "..\\Release\\PicasaExtMSI\\PicasaExt32.msi"
-IDR_MSI64               FILE                    "..\\Release\\PicasaExtMSI\\PicasaExt64.msi"
+IDR_MSI32               FILE                    "..\\Release\\PicasaExtMSI\\PicasaExt32-1.01.msi"
+IDR_MSI64               FILE                    "..\\Release\\PicasaExtMSI\\PicasaExt64-1.01.msi"
 
 /////////////////////////////////////////////////////////////////////////////
 //
