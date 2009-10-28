@@ -4,7 +4,7 @@
 
 
  /* File created by MIDL compiler version 7.00.0500 */
-/* at Wed Oct 21 20:50:48 2009
+/* at Sat Oct 24 20:39:07 2009
  */
 /* Compiler settings for .\PicasaExt.idl:
     Oicf, W1, Zp8, env=Win32 (32b run)
