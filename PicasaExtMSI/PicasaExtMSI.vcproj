@@ -75,6 +75,10 @@
 			RelativePath=".\PicasaExt64.wxs"
 			>
 		</File>
+		<File
+			RelativePath=".\PicasaExtCommon.wxs"
+			>
+		</File>
 	</Files>
 	<Globals>
 	</Globals>

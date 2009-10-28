@@ -5,14 +5,15 @@ goto :error
 
 :start
 set PATH="%WIX%\bin";%PATH%
+set VERSION=1.01
 
 @echo candle.exe -nologo PicasaExt%BIT%.wxs -out "..\Release\PicasaExtMSI\PicasaExt%BIT%.wixobj" -ext WixUIExtension
 candle.exe -nologo PicasaExt%BIT%.wxs -out "..\Release\PicasaExtMSI\PicasaExt%BIT%.wixobj" -ext WixUIExtension
 @if ERRORLEVEL 1 goto :error
 
 
-@echo light.exe -nologo "..\Release\PicasaExtMSI\PicasaExt%BIT%.wixobj" -out "..\Release\PicasaExtMSI\PicasaExt%BIT%.msi" -ext WixUIExtension
-light.exe -nologo "..\Release\PicasaExtMSI\PicasaExt%BIT%.wixobj" -out "..\Release\PicasaExtMSI\PicasaExt%BIT%.msi" -ext WixUIExtension
+@echo light.exe -nologo "..\Release\PicasaExtMSI\PicasaExt%BIT%.wixobj" -out "..\Release\PicasaExtMSI\PicasaExt%BIT%-%VERSION%.msi" -ext WixUIExtension
+light.exe -nologo "..\Release\PicasaExtMSI\PicasaExt%BIT%.wixobj" -out "..\Release\PicasaExtMSI\PicasaExt%BIT%-%VERSION%.msi" -ext WixUIExtension
 @if ERRORLEVEL 1 goto :error
 
 :end

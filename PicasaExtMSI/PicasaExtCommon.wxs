@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Include>
+  <?define ProductVersion="1.0.1" ?>
+  <?define ProductCode="{18120914-36E5-4a24-8EDD-CCB549A4606F}"?>
+  <?define UpgradeCode="{1DAD09A0-F380-45cf-86B6-8B5EFB7E388D}"?>
+
+  <?define APPID="{3D38C35E-34B7-476D-837D-6F2A33AE2281}"?>
+  <?define CLSID="{8218849A-80B4-4231-AD8A-5167F27D2F6F}"?>
+  <?define ComponentID_PicasaExt32="B71FD519-6E0C-417e-BF18-DD66CE5E75A7"?>
+  <?define ComponentID_PicasaExt64="A1E1C5D3-B76F-4d88-A297-4B40760CFF50"?>
+</Include>
